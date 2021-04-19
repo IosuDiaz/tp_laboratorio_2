@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\Entidades\Entidades Biblioteca\bin\Debug\Entidades Biblioteca.dll
+C:\Users\user\source\repos\Entidades\Entidades Biblioteca\bin\Debug\Entidades Biblioteca.pdb
+C:\Users\user\source\repos\Entidades\Entidades Biblioteca\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Entidades\Entidades Biblioteca\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Entidades\Entidades Biblioteca\obj\Debug\Entidades Biblioteca.dll
+C:\Users\user\source\repos\Entidades\Entidades Biblioteca\obj\Debug\Entidades Biblioteca.pdb
