@@ -11,15 +11,26 @@ namespace Entities
     public static class Factory
     {
 
-        static StockManager<Stock<Product>> primaryStock;
-        static StockManager<Stock<Component>> secondaryStock;
+        static StockManager<Product> primaryStock;
+        static StockManager<Component> secondaryStock;
 
 
 
         static Factory()
         {
-            primaryStock = new StockManager<Stock<Product>>();
-            secondaryStock = new StockManager<Stock<Component>>();
+            try
+            {
+                //generar ex para catchear si no existe el el archivo xml
+                primaryStock = new StockManager<Product>(Serializer<Product>.Deserialize("productasdos.xml"));
+                secondaryStock = new StockManager<Component>(Serializer<Component>.Deserialize("componentes.xml"));
+            }
+            catch
+            {
+                primaryStock = new StockManager<Product>();
+                secondaryStock = new StockManager<Component>();
+            }
+            
+
         }
 
         public static void SaveCurrentStock(string primaryStockpath, string secondaryStockpath)
@@ -29,7 +40,7 @@ namespace Entities
 
         }
 
-        public static void AddToPrimaryStock(Stock<Product> product)
+        public static void AddToPrimaryStock(Product product)
         {
             if (!product.Equals(null))
             {
@@ -38,7 +49,7 @@ namespace Entities
                 
         }
 
-        public static void AddToPrimaryStock(Stock<Component> component)
+        public static void AddToSecondaryStock(Component component)
         {
             if (!component.Equals(null))
             { 
@@ -46,6 +57,24 @@ namespace Entities
             }
         }
 
+        public static void RemoveFromPrimaryStock(Guid id)
+        {
+            Factory.primaryStock.RemoveFromStock(id);
+        }
 
+        public static void RemoveFromSecondaryStock(Guid id)
+        {
+            Factory.secondaryStock.RemoveFromStock(id);
+        }
+
+        public static string ListPrimaryStock()
+        {
+            return Factory.primaryStock.ListStock();
+        }
+
+        public static string ListSecondaryStock()
+        {
+            return Factory.secondaryStock.ListStock();
+        }
     }
 }

@@ -38,6 +38,35 @@ namespace Entities
             }
         }
 
+        public static List<T> Deserialize(string path)
+        {
+            XmlTextReader reader = null;
+            XmlSerializer serializer = null;
+            List<T> tList = null;
+
+            
+            try
+            {
+                tList = new List<T>();
+                reader = new XmlTextReader(path);
+                serializer = new XmlSerializer(typeof(List<T>));
+                tList = (List<T>)serializer.Deserialize(reader);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+            }
+
+            return tList;
+        }
+
 
 
 

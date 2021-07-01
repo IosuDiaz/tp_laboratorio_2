@@ -95,6 +95,19 @@ namespace Entities.Products
             return sb.ToString();
         }
 
-        
+        //public static bool operator ==(Product product1, Guid id)
+        //{
+        //    return product1.idProduct == id;
+        //}
+
+        //public static bool operator !=(Product product1, Guid id)
+        //{
+        //    return !(product1.idProduct == id);
+        //}
+
+        public bool Equals(Guid id)
+        {
+            return this.idProduct == id;
+        }
     }
 }

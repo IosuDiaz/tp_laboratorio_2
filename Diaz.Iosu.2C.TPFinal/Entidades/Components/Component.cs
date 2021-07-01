@@ -9,7 +9,6 @@ using System.Xml.Serialization;
 
 namespace Entities.Components
 {
-    [Serializable]
     [XmlInclude(typeof(Motherboard))]
     [XmlInclude(typeof(Processor))]
     [XmlInclude(typeof(Ram))]
@@ -21,7 +20,7 @@ namespace Entities.Components
     {
         protected string brand;
         protected string model;
-        
+
         public Component(string brand, string model)
         {
             this.brand = brand;
@@ -64,6 +63,32 @@ namespace Entities.Components
             sb.AppendLine($"Model: {this.model}");
 
             return sb.ToString();
+        }
+
+        public static bool operator ==(Component comp1, Component comp2)
+        {
+            bool matching = false;
+
+            if (!comp1.Equals(null) && !comp2.Equals(null))
+            {
+                matching = comp1.GetType() == comp2.GetType() && comp1.brand == comp2.brand && comp1.model == comp2.model;
+            }
+
+
+            return matching;
+        }
+
+        public static bool operator !=(Component comp1, Component comp2)
+        {
+            if (!comp1.Equals(null) && !comp2.Equals(null))
+            {
+                return !(comp1 == comp2);
+            }
+            else
+            {
+                return true;
+            }
+
         }
     }
 }

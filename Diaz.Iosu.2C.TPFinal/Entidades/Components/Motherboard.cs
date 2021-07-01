@@ -12,7 +12,7 @@ namespace Entities.Components
         GraphicCard graphicCard;
         Ram ram;
 
-        public Motherboard():base()
+        public Motherboard() : base()
         {
 
         }
@@ -33,7 +33,7 @@ namespace Entities.Components
             this.ram = ram;
         }
 
-        
+
         public Processor Processor
         {
             get
@@ -88,13 +88,41 @@ namespace Entities.Components
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("MOTHERBOARD");
             sb.AppendLine(base.ToString());
-            sb.AppendLine(this.processor.ToString());
-            sb.AppendLine(this.graphicCard.ToString());
-            sb.AppendLine(this.ram.ToString());
-            
-            
+            if (!(this.processor is null))
+            {
+                sb.AppendLine(this.processor.ToString());
+            }
+            if (!(this.graphicCard is null))
+            {
+                sb.AppendLine(this.graphicCard.ToString());
+            }
+            if (!(this.ram is null))
+            {
+                sb.AppendLine(this.ram.ToString());
+            }
+
+
 
             return sb.ToString();
+        }
+
+        public static bool operator ==(Motherboard motherboard1, Motherboard motherboard2)
+        {
+            bool matching = false;
+            if (!motherboard1.Equals(null) && !motherboard2.Equals(null))
+            {
+                matching = motherboard1.brand == motherboard2.brand &&
+                            motherboard1.model == motherboard2.model &&
+                            motherboard1.graphicCard == motherboard2.graphicCard &&
+                       motherboard1.ram == motherboard2.ram &&
+                       motherboard1.processor == motherboard2.processor;
+            }
+            return matching;
+        }
+
+        public static bool operator !=(Motherboard motherboard1, Motherboard motherboard2)
+        {
+            return !(motherboard1 == motherboard2);
         }
     }
 }

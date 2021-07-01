@@ -10,7 +10,6 @@ using System.Xml.Serialization;
 
 namespace Entities.Products
 {
-    [Serializable]
     [XmlInclude(typeof(PC))]
     [XmlInclude(typeof(Notebook))]
     public abstract class Computer : Product

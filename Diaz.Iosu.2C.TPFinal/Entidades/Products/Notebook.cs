@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Components;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Entities.Products
 {
+    
     public class Notebook : Computer
     {
         Display display;

@@ -1,0 +1,10 @@
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\bin\Debug\Forms.exe.config
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\bin\Debug\Forms.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\bin\Debug\Forms.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.Form1.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.Properties.Resources.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms\obj\Debug\Forms.pdb
