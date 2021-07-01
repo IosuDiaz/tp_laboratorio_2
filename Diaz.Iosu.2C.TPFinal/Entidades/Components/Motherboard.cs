@@ -8,20 +8,37 @@ namespace Entities.Components
 {
     public class Motherboard : Component
     {
+        #region Attributes
         Processor processor;
         GraphicCard graphicCard;
         Ram ram;
+        #endregion
 
+        #region Constructors
+        /// <summary>
+        /// Constructor without parameters required to Serialize XML files.
+        /// </summary>
         public Motherboard() : base()
         {
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the Motherboard class.
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
         public Motherboard(string brand, string model) : base(brand, model)
         {
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the Motherboard class.
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
+        /// <param name="processor"></param>
+        /// <param name="graphicCard"></param>
+        /// <param name="ram"></param>
         public Motherboard(string brand,
                             string model,
                             Processor processor,
@@ -33,7 +50,9 @@ namespace Entities.Components
             this.ram = ram;
         }
 
+        #endregion
 
+        #region Properties
         public Processor Processor
         {
             get
@@ -81,8 +100,13 @@ namespace Entities.Components
                 }
             }
         }
+        #endregion
 
-
+        #region Methods
+        /// <summary>
+        /// Returns a string that represents the current product.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -105,11 +129,17 @@ namespace Entities.Components
 
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Method Overloading
+        /// Returns true if both Motherboards are equal. False if not.
+        /// </summary>
+        /// <param name="motherboard1"></param>
+        /// <param name="motherboard2"></param>
+        /// <returns></returns>
         public static bool operator ==(Motherboard motherboard1, Motherboard motherboard2)
         {
             bool matching = false;
-            if (!motherboard1.Equals(null) && !motherboard2.Equals(null))
+            if (!(motherboard1 is null) && !(motherboard2 is null))
             {
                 matching = motherboard1.brand == motherboard2.brand &&
                             motherboard1.model == motherboard2.model &&
@@ -119,10 +149,16 @@ namespace Entities.Components
             }
             return matching;
         }
-
+        /// <summary>
+        /// Return the negation of the equals.
+        /// </summary>
+        /// <param name="motherboard1"></param>
+        /// <param name="motherboard2"></param>
+        /// <returns></returns>
         public static bool operator !=(Motherboard motherboard1, Motherboard motherboard2)
         {
             return !(motherboard1 == motherboard2);
         }
+        #endregion
     }
 }

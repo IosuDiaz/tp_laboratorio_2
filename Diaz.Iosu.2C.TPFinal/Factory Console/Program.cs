@@ -43,11 +43,11 @@ namespace Factory_Console
             //Factory.AddToSecondaryStock(g4);
 
 
-            //Ram r1 = new Ram("Gigabyte", "DDR4 8GB");
+            Ram r1 = new Ram("Gigabyte", "DDR4 8GB");
             //Ram r2 = new Ram("HyperX", "DDR3 4GB");
             //Ram r3 = new Ram("Kingston", "DDR4 16GB");
             //Ram r4 = new Ram("HyperX", "DDR4 16GB");
-
+            object a = new object();
             //Factory.AddToSecondaryStock(r1);
             //Factory.AddToSecondaryStock(r2);
             //Factory.AddToSecondaryStock(r3);

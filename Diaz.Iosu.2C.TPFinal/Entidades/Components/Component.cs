@@ -18,19 +18,12 @@ namespace Entities.Components
     [XmlInclude(typeof(Display))]
     public abstract class Component
     {
+        #region Attributes
         protected string brand;
         protected string model;
+        #endregion
 
-        public Component(string brand, string model)
-        {
-            this.brand = brand;
-            this.model = model;
-        }
-        public Component()
-        {
-
-        }
-
+        #region Properties
         public string Brand
         {
             get
@@ -54,7 +47,33 @@ namespace Entities.Components
                 this.model = value;
             }
         }
+        #endregion
 
+        #region Constructors
+        /// <summary>
+        /// Initializes a new instance of the Component class.
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
+        public Component(string brand, string model)
+        {
+            this.brand = brand;
+            this.model = model;
+        }
+        /// <summary>
+        /// Constructor without parameters required to Serialize XML files.
+        /// </summary>
+        public Component()
+        {
+
+        }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Returns a string that represents the current product.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -64,12 +83,18 @@ namespace Entities.Components
 
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Method Overloading
+        /// Returns true if both components are equal. False if not.
+        /// </summary>
+        /// <param name="comp1"></param>
+        /// <param name="comp2"></param>
+        /// <returns></returns>
         public static bool operator ==(Component comp1, Component comp2)
         {
             bool matching = false;
 
-            if (!comp1.Equals(null) && !comp2.Equals(null))
+            if (!(comp1 is null) && !(comp2 is null))
             {
                 matching = comp1.GetType() == comp2.GetType() && comp1.brand == comp2.brand && comp1.model == comp2.model;
             }
@@ -77,7 +102,12 @@ namespace Entities.Components
 
             return matching;
         }
-
+        /// <summary>
+        /// Return the negation of the equals.
+        /// </summary>
+        /// <param name="comp1"></param>
+        /// <param name="comp2"></param>
+        /// <returns></returns>
         public static bool operator !=(Component comp1, Component comp2)
         {
             if (!comp1.Equals(null) && !comp2.Equals(null))
@@ -90,5 +120,6 @@ namespace Entities.Components
             }
 
         }
+        #endregion
     }
 }

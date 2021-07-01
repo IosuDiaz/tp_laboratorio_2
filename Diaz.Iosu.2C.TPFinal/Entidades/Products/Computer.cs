@@ -14,10 +14,13 @@ namespace Entities.Products
     [XmlInclude(typeof(Notebook))]
     public abstract class Computer : Product
     {
+        #region Attributes
         Motherboard motherboard;
         PowerSource powerSource;
         bool powerButton;
+        #endregion
 
+        #region Properties
         public Motherboard Motherboard
         {
             get
@@ -65,10 +68,17 @@ namespace Entities.Products
                 }
             }
         }
+#endregion
+
+        #region Constructors
+        /// <summary>
+        /// Constructor without parameters required to Serialize XML files.
+        /// </summary>
         public Computer():base()
         {
 
         }
+
         private Computer(string description,
                         Guid idProduct,
                         int serialNumber,
@@ -77,7 +87,15 @@ namespace Entities.Products
             
         }
 
-
+        /// <summary>
+        /// Initializes a new instance of the Computer class.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="idProduct"></param>
+        /// <param name="serialNumber"></param>
+        /// <param name="color"></param>
+        /// <param name="motherboard"></param>
+        /// <param name="powerSource"></param>
         public Computer(string description,
                         Guid idProduct,
                         int serialNumber,
@@ -90,6 +108,14 @@ namespace Entities.Products
             this.powerButton = false;
         }
 
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Switch state of the computer.
+        /// ON -> OFF |
+        /// OFF -> ON
+        /// </summary>
         public void Boot()
         {
             List<Component> listaComponentes = new List<Component>();
@@ -100,7 +126,11 @@ namespace Entities.Products
                 this.powerButton = !this.powerButton;
             }
         }
-
+        /// <summary>
+        /// Override Method
+        /// Returns a string that represents the current product.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -108,12 +138,10 @@ namespace Entities.Products
             sb.AppendLine(base.ToString());
             sb.AppendLine(this.motherboard.ToString());
             sb.AppendLine(this.powerSource.ToString());
-            //sb.AppendLine($"This computer is currently: {this.ComputerState()}");
-
 
             return sb.ToString();
         }
+        #endregion
 
-        
     }
 }
