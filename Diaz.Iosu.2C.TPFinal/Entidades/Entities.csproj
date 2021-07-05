@@ -46,6 +46,7 @@
     <Compile Include="Components\Processor.cs" />
     <Compile Include="Components\Ram.cs" />
     <Compile Include="Components\GraphicCard.cs" />
+    <Compile Include="ISerializable.cs" />
     <Compile Include="Products\Computer.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Components\Motherboard.cs" />

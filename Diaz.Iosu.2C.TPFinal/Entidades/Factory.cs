@@ -42,7 +42,7 @@ namespace Entities
 
         public static void AddToPrimaryStock(Product product)
         {
-            if (!product.Equals(null))
+            if (!(product is null))
             {
                 Factory.primaryStock.AddToStock(product);
             }
@@ -51,7 +51,7 @@ namespace Entities
 
         public static void AddToSecondaryStock(Component component)
         {
-            if (!component.Equals(null))
+            if (!(component is null))
             { 
                 Factory.secondaryStock.AddToStock(component);
             }

@@ -55,7 +55,7 @@ namespace Entities
             }
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
                     this.stockList = value;
                 }
@@ -71,6 +71,7 @@ namespace Entities
         {
             foreach (T item in this.stockList)
             {
+                //revisar
                 if (item.Equals(id))
                 {
                     this.stockList.Remove(item);

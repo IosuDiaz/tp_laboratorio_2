@@ -10,10 +10,8 @@ using Entities.Products;
 
 namespace Entities
 {
-    public static class Serializer<T>
+    public static class Serializer<T> //: ISerializable<T> //Lo serializable va a ser la fabrica y no la serializadora
     {
-
-        
 
         public static void Serialize(string path, T t)
         {
