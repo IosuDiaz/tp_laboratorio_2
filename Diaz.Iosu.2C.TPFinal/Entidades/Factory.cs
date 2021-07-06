@@ -13,7 +13,7 @@ namespace Entities
 
         static StockManager<Product> primaryStock;
         static StockManager<Component> secondaryStock;
-
+        //static event NombreDelegado NoExisteArchivo;
 
 
         static Factory()
@@ -21,11 +21,12 @@ namespace Entities
             try
             {
                 //generar ex para catchear si no existe el el archivo xml
-                primaryStock = new StockManager<Product>(Serializer<Product>.Deserialize("productasdos.xml"));
+                primaryStock = new StockManager<Product>(Serializer<Product>.Deserialize("productos.xml"));
                 secondaryStock = new StockManager<Component>(Serializer<Component>.Deserialize("componentes.xml"));
             }
             catch
             {
+
                 primaryStock = new StockManager<Product>();
                 secondaryStock = new StockManager<Component>();
             }
