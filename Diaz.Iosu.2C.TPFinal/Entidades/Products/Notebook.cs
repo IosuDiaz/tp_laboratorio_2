@@ -92,9 +92,8 @@ namespace Entities.Products
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("Notebook");
-            sb.AppendLine(this.display.ToString());
             sb.AppendLine(base.ToString());
+            sb.AppendLine(this.display.ToString());
 
             return sb.ToString();
         }

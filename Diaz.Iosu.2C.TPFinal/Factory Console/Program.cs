@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Entities;
 using Entities.Products;
 using Entities.Components;
+using static System.Environment;
 
 namespace Factory_Console
 {
@@ -14,16 +15,11 @@ namespace Factory_Console
         static void Main(string[] args)
         {
 
-            Component c;
 
+            Processor p1 = new Processor("Intel", "i9 10900");
+            Processor p2 = new Processor("Intel", "i9 10900");
 
-            c = Assembler<Motherboard>.Assemble();
-
-            c.Brand = "Gigabyte";
-            c.Model = "H310";
-
-            Console.WriteLine(c.ToString());
-
+            Console.WriteLine(p1.Equals(p2));
 
 
             //Factory.SaveCurrentStock("productos.xml","componentes.xml");

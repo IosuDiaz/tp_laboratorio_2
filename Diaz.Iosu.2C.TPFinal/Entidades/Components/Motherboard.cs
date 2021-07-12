@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,12 +58,17 @@ namespace Entities.Components
         {
             get
             {
+                if(!(this.processor is null))
                 return this.processor;
+                else
+                {
+                    throw new MissingComponentException("Processor missing");
+                }
             }
 
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
                     this.processor = value;
                 }
@@ -73,12 +79,17 @@ namespace Entities.Components
         {
             get
             {
-                return this.graphicCard;
+                if (!(this.graphicCard is null))
+                    return this.graphicCard;
+                else
+                {
+                    throw new MissingComponentException("Graphic Card missing");
+                }
             }
 
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
                     this.graphicCard = value;
                 }
@@ -89,12 +100,17 @@ namespace Entities.Components
         {
             get
             {
-                return this.ram;
+                if (!(this.ram is null))
+                    return this.ram;
+                else
+                {
+                    throw new MissingComponentException("Ram missing");
+                }
             }
 
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
                     this.ram = value;
                 }

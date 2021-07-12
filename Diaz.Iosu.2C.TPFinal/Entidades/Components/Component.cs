@@ -120,6 +120,12 @@ namespace Entities.Components
             }
 
         }
+
+
+        public bool Equals(Component comp)
+        {
+            return this == comp;
+        }
         #endregion
     }
 }

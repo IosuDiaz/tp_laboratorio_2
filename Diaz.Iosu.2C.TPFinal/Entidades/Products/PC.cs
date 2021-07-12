@@ -26,12 +26,14 @@ namespace Entities.Products
             }
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
                     this.gabinet = value;
                 }
             }
         }
+
+        
         #endregion
 
         #region Constructors

@@ -13,11 +13,12 @@ using Entities.Components;
 namespace Entities
 {
     [Serializable]
-    public class StockManager<T>
+    public class StockManager<T> : IStockeable<T>
     {
-        //Lista Generica
+        #region Attributes
         private List<T> stockList;
-
+        #endregion
+        #region Contructors
         public StockManager()
         {
             this.stockList = new List<T>();
@@ -25,28 +26,13 @@ namespace Entities
 
         public StockManager(List<T> t)
         {
-            if (!t.Equals(null))
+            if (!(t is null))
             {
                 this.stockList = t;
             }
         }
-
-        public List<T> Filter<X>()
-        {
-            List<T> xList = new List<T>();
-
-            foreach (T item in this.stockList)
-            {
-                if (item.GetType() == typeof(X))
-                {
-                    xList.Add(item);
-                }
-            }
-
-            return xList;
-        }
-
-
+        #endregion
+        #region Properties
         public List<T> StockList
         {
             get
@@ -61,35 +47,50 @@ namespace Entities
                 }
             }
         }
+        #endregion
 
-        public void LoadInventory_FromXml(string path)
+        #region Methods
+        /// <summary>
+        /// Return the filtered list
+        /// </summary>
+        /// <typeparam name="X"></typeparam>
+        /// <returns></returns>
+        public List<X> Filter<X>() where X: T
         {
-
-        }
-
-        public void RemoveFromStock(Guid id)
-        {
+            List<X> xList = new List<X>();
+            
             foreach (T item in this.stockList)
             {
-                //revisar
-                if (item.Equals(id))
+                if (item.GetType() == typeof(X))
                 {
-                    this.stockList.Remove(item);
+                    xList.Add((X)item);
                 }
             }
-        }
 
+            return xList;
+        }
+        /// <summary>
+        /// Serializes the actual stock to XML
+        /// </summary>
+        /// <param name="path"></param>
         public void SaveInventory_ToXml(string path)
         {
             this.SerializeStock(path, this.stockList);
         }
 
-
+        /// <summary>
+        /// Serializes the actual stock to XML
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="stockList"></param>
         private void SerializeStock(string path, List<T> stockList)
         {
             Serializer<List<T>>.Serialize(path, stockList);
         }
-
+        /// <summary>
+        /// Add an item to the stock list 
+        /// </summary>
+        /// <param name="t"></param>
         public void AddToStock(T t)
         {
             if (!t.Equals(null))
@@ -97,7 +98,10 @@ namespace Entities
                 this.stockList.Add(t);
             }
         }
-
+        /// <summary>
+        /// List the actual stock
+        /// </summary>
+        /// <returns></returns>
         public string ListStock()
         {
             StringBuilder sb = new StringBuilder();
@@ -108,12 +112,14 @@ namespace Entities
                 {
 
                     sb.AppendLine(item.ToString());
+                    sb.AppendLine("-----------------------------------");
 
                 }
             }
 
             return sb.ToString();
         }
+        #endregion
 
     }
 }

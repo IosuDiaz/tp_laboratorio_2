@@ -10,9 +10,13 @@ using Entities.Products;
 
 namespace Entities
 {
-    public static class Serializer<T> //: ISerializable<T> //Lo serializable va a ser la fabrica y no la serializadora
+    public static class Serializer<T>
     {
-
+        /// <summary>
+        /// Serializes the stock of the factory
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="t"></param>
         public static void Serialize(string path, T t)
         {
             XmlTextWriter writer = null;
@@ -35,7 +39,11 @@ namespace Entities
                 }
             }
         }
-
+        /// <summary>
+        /// Deserializes the stock of the factory
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static List<T> Deserialize(string path)
         {
             XmlTextReader reader = null;

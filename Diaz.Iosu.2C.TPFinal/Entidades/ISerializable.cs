@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 namespace Entities
 {
-    public interface ISerializable<T>
+    public interface IStockeable<T>
     {
-        void Serialize(string path, T t);
+        void AddToStock(T t);
 
-        List<T> Deserialize(string path);
     }
 }

@@ -12,12 +12,12 @@ namespace Entities.Products
 {
     [XmlInclude(typeof(PC))]
     [XmlInclude(typeof(Notebook))]
-    public abstract class Computer : Product
+    public class Computer : Product
     {
         #region Attributes
         Motherboard motherboard;
         PowerSource powerSource;
-        bool powerButton;
+
         #endregion
 
         #region Properties
@@ -29,7 +29,7 @@ namespace Entities.Products
             }
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
 
                     this.motherboard = value;
@@ -46,7 +46,7 @@ namespace Entities.Products
 
             set
             {
-                if (!value.Equals(null))
+                if (!(value is null))
                 {
 
                     this.powerSource = value;
@@ -54,21 +54,27 @@ namespace Entities.Products
             }
         }
 
-        private string ComputerState
+        public Computer AddComputer
         {
-            get
+
+            set
             {
-                if (this.powerButton)
+                if (!(value is null) &&
+                    !(value.motherboard is null) &&
+                    !(value.motherboard.GraphicCard is null) &&
+                    !(value.motherboard.Ram is null) &&
+                    !(value.motherboard.Processor is null) &&
+                    !(value.powerSource is null))
                 {
-                    return "ON";
-                }
-                else
-                {
-                    return "OFF";
+                    this.Motherboard = value.Motherboard;
+                    this.Motherboard.Processor = value.Motherboard.Processor;
+                    this.Motherboard.Ram = value.Motherboard.Ram;
+                    this.Motherboard.GraphicCard = value.Motherboard.GraphicCard;
+                    this.PowerSource = value.PowerSource;
                 }
             }
         }
-#endregion
+        #endregion
 
         #region Constructors
         /// <summary>
@@ -105,27 +111,13 @@ namespace Entities.Products
         {
             this.motherboard = motherboard;
             this.powerSource = powerSource;
-            this.powerButton = false;
+
         }
 
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Switch state of the computer.
-        /// ON -> OFF |
-        /// OFF -> ON
-        /// </summary>
-        public void Boot()
-        {
-            List<Component> listaComponentes = new List<Component>();
 
-            //if (!this.motherboard.Equals(null) && !this.powerSource.Equals(null) && !this.motherboard.Processor.Equals(null) && this.motherboard)
-            if(listaComponentes.Contains(null))
-            {
-                this.powerButton = !this.powerButton;
-            }
-        }
         /// <summary>
         /// Override Method
         /// Returns a string that represents the current product.
@@ -136,7 +128,9 @@ namespace Entities.Products
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.ToString());
+            if(!(this.motherboard is null))
             sb.AppendLine(this.motherboard.ToString());
+            if(!(this.powerSource is null))
             sb.AppendLine(this.powerSource.ToString());
 
             return sb.ToString();
