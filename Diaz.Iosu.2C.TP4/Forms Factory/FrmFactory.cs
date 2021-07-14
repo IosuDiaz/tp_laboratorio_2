@@ -26,6 +26,8 @@ namespace Forms_Factory
         public FrmFactory()
         {
             InitializeComponent();
+            Factory.NewProductList += RefreshProductListWithXmlImport;
+            this.ImportFactoryData();
             this.HideButtons();
         }
 
@@ -43,10 +45,7 @@ namespace Forms_Factory
             this.computer = Assembler.Assemble<Computer>();
             this.notebook = Assembler.Assemble<Notebook>();
 
-            //Hidding buttons
-            this.btnAssemblePC.Visible = false;
-            this.btnAssembleMotherboard.Visible = true;
-            this.lblSelectComponents.Visible = true;
+
             //Showing Generic Component Form
             FrmSelectingComponent<Display> selectingComponent = new FrmSelectingComponent<Display>(Factory.SecondaryStock.Filter<Display>());
             selectingComponent.ShowDialog();
@@ -60,11 +59,14 @@ namespace Forms_Factory
                     if (!(this.notebook.Display is null))
                     {
                         this.rtbCurrentAssembling.Text += this.notebook.Display.ToString();
-
+                        //Hidding buttons
+                        this.btnAssemblePC.Visible = false;
+                        this.btnAssembleMotherboard.Visible = true;
+                        this.lblSelectComponents.Visible = true;
                     }
                     else
                     {
-                        throw new MissingComponentException("Factory cannot assemble this product without a gabinet");
+                        throw new MissingComponentException("Factory cannot assemble this product without a Display");
                     }
                 }
             }
@@ -83,9 +85,9 @@ namespace Forms_Factory
 
             this.computer = Assembler.Assemble<Computer>();
             this.pc = Assembler.Assemble<PC>();
-            this.btnAssembleNotebook.Visible = false;
-            this.btnAssembleMotherboard.Visible = true;
-            this.lblSelectComponents.Visible = true;
+
+
+
             FrmSelectingComponent<Gabinet> selectingComponent = new FrmSelectingComponent<Gabinet>(Factory.SecondaryStock.Filter<Gabinet>());
             selectingComponent.ShowDialog();
             try
@@ -97,7 +99,9 @@ namespace Forms_Factory
                     if (!(this.pc.Gabinet is null))
                     {
                         this.rtbCurrentAssembling.Text += this.pc.Gabinet.ToString();
-
+                        this.btnAssembleNotebook.Visible = false;
+                        this.btnAssembleMotherboard.Visible = true;
+                        this.lblSelectComponents.Visible = true;
                     }
                     else
                     {
@@ -120,7 +124,7 @@ namespace Forms_Factory
             FrmSelectingComponent<Motherboard> selectingComponent = new FrmSelectingComponent<Motherboard>(Factory.SecondaryStock.Filter<Motherboard>());
 
             selectingComponent.ShowDialog();
-            this.btnAssembleProcessor.Visible = true;
+
             try
             {
                 if (selectingComponent.DialogResult == DialogResult.Cancel)
@@ -129,7 +133,7 @@ namespace Forms_Factory
                     if (!(this.computer.Motherboard is null))
                     {
                         this.rtbCurrentAssembling.Text += this.computer.Motherboard.ToString();
-
+                        this.btnAssembleProcessor.Visible = true;
                     }
                     else
                     {
@@ -153,7 +157,7 @@ namespace Forms_Factory
             FrmSelectingComponent<Processor> selectingComponent = new FrmSelectingComponent<Processor>(Factory.SecondaryStock.Filter<Processor>());
 
             selectingComponent.ShowDialog();
-            this.btnAssembleRam.Visible = true;
+
             try
             {
 
@@ -164,6 +168,7 @@ namespace Forms_Factory
                     if (!(this.computer.Motherboard.Processor is null))
                     {
                         this.rtbCurrentAssembling.Text += this.computer.Motherboard.Processor.ToString();
+                        this.btnAssembleRam.Visible = true;
                     }
                     else
                     {
@@ -187,7 +192,7 @@ namespace Forms_Factory
             FrmSelectingComponent<Ram> selectingComponent = new FrmSelectingComponent<Ram>(Factory.SecondaryStock.Filter<Ram>());
 
             selectingComponent.ShowDialog();
-            this.btnAssembleGraphicCard.Visible = true;
+
             try
             {
 
@@ -197,7 +202,7 @@ namespace Forms_Factory
                     if (!(this.computer.Motherboard.Ram is null))
                     {
                         this.rtbCurrentAssembling.Text += this.computer.Motherboard.Ram.ToString();
-
+                        this.btnAssembleGraphicCard.Visible = true;
                     }
                     else
                     {
@@ -221,10 +226,7 @@ namespace Forms_Factory
 
             selectingComponent.ShowDialog();
 
-            this.txtDescription.Visible = true;
-            this.lblDescription.Visible = true;
-            this.lblColor.Visible = true;
-            this.txtColor.Visible = true;
+
 
             try
             {
@@ -236,6 +238,10 @@ namespace Forms_Factory
                     {
                         this.rtbCurrentAssembling.Text += this.computer.PowerSource.ToString();
                         this.btnAssembleProduct.Visible = true;
+                        this.txtDescription.Visible = true;
+                        this.lblDescription.Visible = true;
+                        this.lblColor.Visible = true;
+                        this.txtColor.Visible = true;
                     }
                     else
                     {
@@ -259,7 +265,7 @@ namespace Forms_Factory
 
             selectingComponent.ShowDialog();
 
-            this.btnAssemblePowerSource.Visible = true;
+
 
             try
             {
@@ -270,7 +276,7 @@ namespace Forms_Factory
                     if (!(this.computer.Motherboard.GraphicCard is null))
                     {
                         this.rtbCurrentAssembling.Text += this.computer.Motherboard.GraphicCard.ToString();
-
+                        this.btnAssemblePowerSource.Visible = true;
                     }
                     else
                     {
@@ -295,7 +301,7 @@ namespace Forms_Factory
 
                 try
                 {
-
+                    this.pc.AddComputer = this.computer;
                     if (!(this.computer.Motherboard is null) &&
                         !(this.computer.PowerSource is null) &&
                         !(this.computer.Motherboard.Processor is null) &&
@@ -307,15 +313,15 @@ namespace Forms_Factory
                         this.pc.Color = this.txtColor.Text;
                         this.pc.IdProduct = Assembler.GenerateGuid();
                         this.pc.SerialNumber = Assembler.GenerateSerialNumber();
-                        this.pc.AddComputer = this.computer;
+                        
                         Factory.NewProduct += this.RefreshList;
                         Factory.AddToPrimaryStock(this.pc);
-                        Factory.SaveCurrentStock("C:\\Users\\PC\\Desktop\\tp_laboratorio_2\\Diaz.Iosu.2C.TPFinal\\productos.xml", "C:\\Users\\PC\\Desktop\\tp_laboratorio_2\\Diaz.Iosu.2C.TPFinal\\componentes.xml");
+                        Factory.SavePrimaryStockToXml();
                         this.SaveToDB(this.pc);
                         this.rtbCurrentAssembling.Text = "";
                         this.btnAssembleNotebook.Visible = true;
                         this.HideButtons();
-                        
+
                     }
                     else
                     {
@@ -340,19 +346,21 @@ namespace Forms_Factory
                         !(this.computer.Motherboard.Processor is null) &&
                         !(this.computer.Motherboard.Ram is null) &&
                         !(this.notebook.Display is null) &&
-                        !(this.computer.Motherboard.GraphicCard is null))
+                        !(this.computer.Motherboard.GraphicCard is null) &&
+                        !(this.txtDescription.Text == "") &&
+                        !(this.txtColor.Text == ""))
                     {
                         this.notebook.IdProduct = Assembler.GenerateGuid();
                         this.notebook.SerialNumber = Assembler.GenerateSerialNumber();
                         this.notebook.AddComputer = this.computer;
                         Factory.NewProduct += this.RefreshList;
                         Factory.AddToPrimaryStock(this.notebook);
-                        Factory.SaveCurrentStock("C:\\Users\\PC\\Desktop\\tp_laboratorio_2\\Diaz.Iosu.2C.TPFinal\\productos.xml", "C:\\Users\\PC\\Desktop\\tp_laboratorio_2\\Diaz.Iosu.2C.TPFinal\\componentes.xml");
+                        Factory.SavePrimaryStockToXml();
                         this.SaveToDB(this.notebook);
                         this.rtbCurrentAssembling.Text = "";
                         this.btnAssemblePC.Visible = true;
                         this.HideButtons();
-                        
+
                     }
                     else
                     {
@@ -453,6 +461,31 @@ namespace Forms_Factory
             }
 
 
+        }
+        private void ImportFactoryData()
+        {
+            
+            try
+            {
+                MessageBox.Show("Import the XML file for the Product stock");
+                Factory.ImportPrimaryStockFromXML();
+                MessageBox.Show("Import the XML file for the Component stock");
+                Factory.ImportSecondaryStockFromXML();
+            }
+            catch
+            {
+                MessageBox.Show("Import Failed.");
+            }
+            
+        }
+
+        private void btnImportXML_Click(object sender, EventArgs e)
+        {
+            this.ImportFactoryData();
+        }
+        private void RefreshProductListWithXmlImport(StockManager<Product> stockManagerList)
+        {
+            this.rtbListaProductos.Text += stockManagerList.ListStock();
         }
     }
 }

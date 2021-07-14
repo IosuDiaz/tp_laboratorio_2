@@ -14,11 +14,7 @@ namespace Factory_Console
     {
         static void Main(string[] args)
         {
-
-
-
-
-
+            
             Console.ReadLine();
         }
     }

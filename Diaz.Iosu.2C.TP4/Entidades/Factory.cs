@@ -1,23 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Entities.Components;
 using Entities.Products;
 
 namespace Entities
 {
-    public delegate void RefreshProductList(Product product);
+    public delegate void RefreshProductAdd(Product product);
+    public delegate void RefreshProductList(StockManager<Product> productList);
     public static class Factory
     {
         #region Attributes
         static StockManager<Product> primaryStock;
         static StockManager<Component> secondaryStock;
-        public static event RefreshProductList NewProduct;
+        public static event RefreshProductAdd NewProduct;
+        public static event RefreshProductList NewProductList;
+        static OpenFileDialog ofdPrimaryStock;
+        static OpenFileDialog ofdSecondaryStock;
         #endregion
 
         #region Properties
+
+        public static StockManager<Product> PrimaryStock
+        {
+            get
+            {
+                return Factory.primaryStock;
+            }
+        }
         public static StockManager<Component> SecondaryStock
         {
             get
@@ -33,19 +47,12 @@ namespace Entities
         /// </summary>
         static Factory()
         {
-            try
-            {
-                
-                primaryStock = new StockManager<Product>(Serializer<Product>.Deserialize("C:\\Users\\PC\\Desktop\\tp_laboratorio_2\\Diaz.Iosu.2C.TP4\\productos.xml"));
-                secondaryStock = new StockManager<Component>(Serializer<Component>.Deserialize("C:\\Users\\PC\\Desktop\\tp_laboratorio_2\\Diaz.Iosu.2C.TP4\\componentes.xml"));
-            }
-            catch
-            {
-
-                primaryStock = new StockManager<Product>();
-                secondaryStock = new StockManager<Component>();
-            }
             
+            primaryStock = new StockManager<Product>();
+            secondaryStock = new StockManager<Component>();
+
+            //Factory.ImportPrimaryStockFromXML();
+            //Factory.ImportSecondaryStockFromXML();
 
         }
         #endregion
@@ -56,10 +63,10 @@ namespace Entities
         /// </summary>
         /// <param name="primaryStockpath"></param>
         /// <param name="secondaryStockpath"></param>
-        public static void SaveCurrentStock(string primaryStockpath, string secondaryStockpath)
+        public static void SavePrimaryStockToXml()
         {
-            Factory.primaryStock.SaveInventory_ToXml(primaryStockpath);
-            Factory.secondaryStock.SaveInventory_ToXml(secondaryStockpath);
+            Factory.primaryStock.SaveInventory_ToXml(Factory.ofdPrimaryStock.FileName);
+            
 
         }
 
@@ -74,7 +81,7 @@ namespace Entities
                 Factory.primaryStock.AddToStock(product);
                 Factory.NewProduct(product);
             }
-                
+
         }
         /// <summary>
         /// Add a component to the secondary stock
@@ -83,7 +90,7 @@ namespace Entities
         public static void AddToSecondaryStock(Component component)
         {
             if (!(component is null))
-            { 
+            {
                 Factory.secondaryStock.AddToStock(component);
             }
         }
@@ -103,6 +110,30 @@ namespace Entities
         public static string ListSecondaryStock()
         {
             return Factory.secondaryStock.ListStock();
+        }
+
+        public static void ImportPrimaryStockFromXML()
+        {
+            Factory.ofdPrimaryStock = new OpenFileDialog();
+
+            if (Factory.ofdPrimaryStock.ShowDialog() == DialogResult.OK)
+            {
+                Factory.primaryStock = new StockManager<Product>(Serializer<Product>.Deserialize(Factory.ofdPrimaryStock.FileName));
+                Factory.NewProductList(Factory.PrimaryStock);
+            }
+
+            
+
+        }
+
+        public static void ImportSecondaryStockFromXML()
+        {
+            Factory.ofdSecondaryStock = new OpenFileDialog();
+
+            if (Factory.ofdSecondaryStock.ShowDialog() == DialogResult.OK)
+            {
+                Factory.secondaryStock = new StockManager<Component>(Serializer<Component>.Deserialize(Factory.ofdSecondaryStock.FileName));
+            }
         }
         #endregion
     }

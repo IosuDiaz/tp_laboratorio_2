@@ -48,12 +48,14 @@ namespace Forms_Factory
             this.lblSelectProductToAssemble = new System.Windows.Forms.Label();
             this.btnAssembleNotebook = new System.Windows.Forms.Button();
             this.btnCancelAssembling = new System.Windows.Forms.Button();
+            this.btnImportXML = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbListaProductos
             // 
             this.rtbListaProductos.Location = new System.Drawing.Point(12, 27);
             this.rtbListaProductos.Name = "rtbListaProductos";
+            this.rtbListaProductos.ReadOnly = true;
             this.rtbListaProductos.Size = new System.Drawing.Size(434, 551);
             this.rtbListaProductos.TabIndex = 0;
             this.rtbListaProductos.Text = "";
@@ -140,6 +142,7 @@ namespace Forms_Factory
             // 
             this.rtbCurrentAssembling.Location = new System.Drawing.Point(657, 27);
             this.rtbCurrentAssembling.Name = "rtbCurrentAssembling";
+            this.rtbCurrentAssembling.ReadOnly = true;
             this.rtbCurrentAssembling.Size = new System.Drawing.Size(316, 551);
             this.rtbCurrentAssembling.TabIndex = 11;
             this.rtbCurrentAssembling.Text = "";
@@ -224,11 +227,22 @@ namespace Forms_Factory
             this.btnCancelAssembling.UseVisualStyleBackColor = true;
             this.btnCancelAssembling.Click += new System.EventHandler(this.btnCancelAssembling_Click);
             // 
+            // btnImportXML
+            // 
+            this.btnImportXML.Location = new System.Drawing.Point(486, 495);
+            this.btnImportXML.Name = "btnImportXML";
+            this.btnImportXML.Size = new System.Drawing.Size(136, 23);
+            this.btnImportXML.TabIndex = 19;
+            this.btnImportXML.Text = "Import XML";
+            this.btnImportXML.UseVisualStyleBackColor = true;
+            this.btnImportXML.Click += new System.EventHandler(this.btnImportXML_Click);
+            // 
             // FrmFactory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 590);
+            this.Controls.Add(this.btnImportXML);
             this.Controls.Add(this.btnCancelAssembling);
             this.Controls.Add(this.lblCurrentAssembling);
             this.Controls.Add(this.txtColor);
@@ -277,6 +291,7 @@ namespace Forms_Factory
         private System.Windows.Forms.Label lblSelectProductToAssemble;
         private System.Windows.Forms.Button btnAssembleNotebook;
         private System.Windows.Forms.Button btnCancelAssembling;
+        private System.Windows.Forms.Button btnImportXML;
     }
 }
 

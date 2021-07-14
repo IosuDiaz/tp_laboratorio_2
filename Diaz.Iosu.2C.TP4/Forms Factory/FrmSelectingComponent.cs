@@ -46,5 +46,10 @@ namespace Forms_Factory
             this.Return = var;
             this.Close();
         }
+
+        private void btnCancelSelection_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

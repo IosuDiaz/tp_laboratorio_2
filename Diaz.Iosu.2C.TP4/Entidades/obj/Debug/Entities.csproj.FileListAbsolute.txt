@@ -10,3 +10,9 @@ C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Entidades\obj\Debug\En
 C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Entidades\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Entidades\obj\Debug\Entities.dll
 C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Entidades\obj\Debug\Entities.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Entidades\bin\Debug\Entities.dll
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Entidades\bin\Debug\Entities.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Entidades\obj\Debug\Entities.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Entidades\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Entidades\obj\Debug\Entities.dll
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Entidades\obj\Debug\Entities.pdb

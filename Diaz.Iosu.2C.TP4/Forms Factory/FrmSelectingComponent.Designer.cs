@@ -36,6 +36,7 @@ namespace Forms_Factory
             this.componentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblComponentName = new System.Windows.Forms.Label();
             this.lblManualDeUso = new System.Windows.Forms.Label();
+            this.btnCancelSelection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.componentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,11 +94,22 @@ namespace Forms_Factory
             this.lblManualDeUso.TabIndex = 2;
             this.lblManualDeUso.Text = "Doble click para seleccionar el componente";
             // 
+            // btnCancelSelection
+            // 
+            this.btnCancelSelection.Location = new System.Drawing.Point(688, 12);
+            this.btnCancelSelection.Name = "btnCancelSelection";
+            this.btnCancelSelection.Size = new System.Drawing.Size(100, 23);
+            this.btnCancelSelection.TabIndex = 3;
+            this.btnCancelSelection.Text = "Cancel selection";
+            this.btnCancelSelection.UseVisualStyleBackColor = true;
+            this.btnCancelSelection.Click += new System.EventHandler(this.btnCancelSelection_Click);
+            // 
             // FrmSelectingComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancelSelection);
             this.Controls.Add(this.lblManualDeUso);
             this.Controls.Add(this.lblComponentName);
             this.Controls.Add(this.dgvComponentes);
@@ -119,5 +131,6 @@ namespace Forms_Factory
         private System.Windows.Forms.BindingSource componentBindingSource;
         private System.Windows.Forms.Label lblComponentName;
         private System.Windows.Forms.Label lblManualDeUso;
+        private System.Windows.Forms.Button btnCancelSelection;
     }
 }
