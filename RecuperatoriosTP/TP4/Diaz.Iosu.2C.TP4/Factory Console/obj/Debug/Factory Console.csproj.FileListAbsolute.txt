@@ -1,0 +1,30 @@
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Factory Console.exe.config
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Factory Console.exe
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Factory Console.pdb
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Entities.dll
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Entities.pdb
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.csproj.CopyComplete
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.exe
+C:\Users\PC\source\repos\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Factory Console.exe.config
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Factory Console.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Factory Console.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Entities.dll
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\bin\Debug\Entities.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.csproj.CopyComplete
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Factory Console\obj\Debug\Factory Console.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\bin\Debug\Factory Console.exe.config
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\bin\Debug\Factory Console.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\bin\Debug\Factory Console.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\bin\Debug\Entities.dll
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\bin\Debug\Entities.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\obj\Debug\Factory Console.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\obj\Debug\Factory Console.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\obj\Debug\Factory Console.csproj.CopyComplete
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\obj\Debug\Factory Console.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Factory Console\obj\Debug\Factory Console.pdb

@@ -1,0 +1,28 @@
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\bin\Debug\Forms Factory.exe.config
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\bin\Debug\Forms Factory.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\bin\Debug\Forms Factory.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms Factory.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms_Factory.FrmFactory.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms_Factory.Properties.Resources.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms Factory.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms Factory.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms Factory.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms Factory.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\bin\Debug\Entities.dll
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\bin\Debug\Entities.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms Factory.csproj.CopyComplete
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TPFinal\Forms Factory\obj\Debug\Forms_Factory.FrmSelectingComponent.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\bin\Debug\Forms Factory.exe.config
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\bin\Debug\Forms Factory.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\bin\Debug\Forms Factory.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\bin\Debug\Entities.dll
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\bin\Debug\Entities.pdb
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms Factory.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms_Factory.FrmFactory.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms_Factory.FrmSelectingComponent.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms_Factory.Properties.Resources.resources
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms Factory.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms Factory.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms Factory.csproj.CopyComplete
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms Factory.exe
+C:\Users\PC\Desktop\tp_laboratorio_2\Diaz.Iosu.2C.TP4\Forms Factory\obj\Debug\Forms Factory.pdb
